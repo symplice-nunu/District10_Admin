@@ -1,35 +1,33 @@
 @extends('app')
 
 @section('content')
-<div class="container">
-            <div class="box">
-                <div class="box-row">
-                    <div class="box-cell box1">
-                    It is a good platform to learn programming. It is an
-                    educational website. Prepare for the Recruitment drive
-                    of product based companies like Microsoft, Amazon,
-                    Adobe etc with a free online placement preparation
-                    course. The course focuses on various MCQ's & Coding
-                    question likely to be asked in the interviews & make
-                    your upcoming placement season efficient and successful.
-                    </div>
-                    <div class="box-cell box2">
-                    Also, any geeks can help other geeks by writing articles
-                    on the GeeksforGeeks, publishing articles follow few
-                    steps that are Articles that need little modification/
-                    improvement from reviewers are published first. To
-                    quickly get your articles reviewed, please refer
-                    existing articles, their formatting style, coding
-                    style, and try to make you are close to them.
-                    </div>
+<section class="login-page">
+    <div class="container height-full-page">
+        <div class="row align-items-center height-full-page">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="http://os7.techaffinity.us/district10/public/images/logo-login-page.png">
                 </div>
-            </div>
-        </div>
-<main class="cotainer mt-5">
-    <p></p>
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-                <div class="card cardd2">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 login-content-wrap">
+                        <div class="login-content">
+                            <p>Welcome to the District 10 App.  Please <b>Sign-in</b> or <b>Create a new account</b>.</p>
+                            <p>District 10 is made up of 7 Chapters of the National Electrical Contractors Association (NECA) representing the Outside Electrical Construction industry in the United States of America.
+                            <ul style="color: #e5e7ec;">
+                                <li>American Line Builders Chapter</li>
+                                <li>Missouri Valley Chapter</li>
+                                <li>Northeast Line Constructors Chapter</li>
+                                <li>Northwest Line Constructors Chapter</li>
+                                <li>Southeastern Line Constructors Chapter</li>
+                                <li>Southwestern Line Constructors Chapter</li>
+                                <li>Western Line Constructors Chapter</li>
+                            </ul>
+                            </p>
+                            <p>The D10 App will serve to provide you with access to Chapter content, Collective Bargaining Agreements, Jurisdictional Maps, and more.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                    <div class="card">
                     
                     <div class="card-body">
                         <form method="POST" action="{{ route('signin.custom') }}">
@@ -63,9 +61,10 @@
                             </div>
                             <br>
                             <div class="col-xs-5 col-sm-5 col-md-9">
-                            <div class="form-group" style="margin-left: 1.9em;">
-                             <strong style="color: #0000FF;">Create Account </strong> &nbsp; |
-                             &nbsp;<strong style="color: #0000FF;">Forgot Password?</strong>
+                            <div class="form-group" style="margin-left: 3.5em;">
+                            <div style="color: #0000FF;"> <strong>Create Account </strong> &nbsp; |
+                             &nbsp;<strong>Forgot Password?</strong>
+                                </div>
                                         </div>
                                 </div>
                                 <br>
@@ -73,8 +72,12 @@
                         </form>
                     </div>
                 </div>
+                    </div>
+                </div>
+               
             </div>
         </div>
-</main>
+</section>
+
 
 @endsection

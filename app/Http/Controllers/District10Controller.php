@@ -14,7 +14,7 @@ class District10Controller extends Controller
      */
     public function index()
     {
-        $district10s = District10::latest()->paginate(5);
+        $district10 = District10::latest()->paginate(5);
     
         return view('district10.index',compact('district10'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

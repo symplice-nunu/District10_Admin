@@ -11,4 +11,6 @@ class District10 extends Model
     protected $fillable = [
         'companyname', 'emailaddress', 'chapter', 'position', 'address', 'state', 'city', 'zipcode', 'contact', 'phone', 'fax', 'website', 'image'
     ];
+    
+    protected $table="district10";
 }

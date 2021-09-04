@@ -41,6 +41,9 @@ class AuthController extends Controller
     {  
         $request->validate([
             'name' => 'required',
+            'neca' => 'required',
+            'necaa' => 'required',
+            'company' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
@@ -54,6 +57,9 @@ class AuthController extends Controller
     {
       return User::create([
         'name' => $data['name'],
+        'neca' => $data['neca'],
+        'necaa' => $data['necaa'],
+        'company' => $data['company'],
         'email' => $data['email'],
         'password' => Hash::make($data['password'])
       ]);

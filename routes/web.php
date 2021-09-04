@@ -13,16 +13,20 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource('district10', 'App\Http\Controllers\District10Controller');
 
-// Route::get('/login', [AuthController::class, 'index'])->name('login');
-// Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
 
 
-// Route::get('/register', function(){
-//   return view('auth.signup');
-// });
-// Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user.registration');
+Route::get('/register', function(){
+  return view('auth.signup');
+});
+Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user.registration');
 
-Route::resource('district10', District10Controller::class);
-// Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
-// Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
