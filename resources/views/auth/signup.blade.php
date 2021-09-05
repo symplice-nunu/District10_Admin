@@ -71,7 +71,6 @@
                                 <div class="form-group">
                               <div class="g-recaptcha" data-sitekey="6Lce3kAcAAAAAGvaArCJqWmkdKemtknxViDaVIKB"></div>
                                 </div>
-       <p>koko</p>
                              </div>
                              <div class="form-group mb-2">
                              <p style="red;">Your account request will be reviewed and approved within 24 hours</p>

@@ -1,5 +1,4 @@
-@extends('app')
-
+@extends('company.layout')
 @section('content')
 
     
@@ -75,10 +74,66 @@
             
             </div>
         </header>
-       
-        <div class="">
-      <img class="img-responsive" id="home-map" src="http://os7.techaffinity.us/district10/public/map/usa-map.png" title="Image Map">
+       <div class="container mg-10">
+       <div class="row">
+       <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h2 class="m-0 text-dark">Manage companies</h2>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item">Manage Companies</li>
+                </ol>
+            </div>
+        </div>
     </div>
-    </div> <p style="color: black;">Dashboard</p>
+        <div class="col-lg-12 margin-tb">
+            
+            <div class="pull-right">
+                <a class="btn btn-primary btn-create" href="{{ route('company.create') }}"> Add Company</a>
+            </div>
+        </div>
+    </div>
+   
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+   
+    <table class="table table-bordered">
+        <tr>
+            <th>Company Name</th>
+            <th width="230px">Chapter</th>
+            <th width="150px">Status</th>
+            <th width="140px">Action</th>
+        </tr>
+        @foreach ($company as $compan)
+        <tr>
+            <td>{{ $compan->companyname }}</td>
+            <td>{{ $compan->chapter }}</td>
+            <td>{{ $compan->status }}</td>
+            <td>
+                <form action="{{ route('company.destroy',$compan->id) }}" method="POST">
+   
+                    <!-- <a class="btn btn-info" href="{{ route('company.show',$compan->id) }}">Show</a> -->
+    
+                    <a class="btn btn-primary" href="{{ route('company.edit',$compan->id) }}">Edit</a>
+   
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+  
+    {!! $company->links() !!}
+       </div>    </div> <p style="color: black;">Dashboard</p>
+       
 @yield('content')
 @endsection

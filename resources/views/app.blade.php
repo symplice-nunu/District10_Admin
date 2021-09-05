@@ -9,7 +9,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css/css2?family=Poppins:wght@300;400;500;600&display=swap');
 :root {
-    --main-color: pink;
+    --main-color: whitesmoke;
     --color-dark: #1D2231;
     --text-grey: #8390A2;
 }
@@ -23,7 +23,6 @@
 }
 a{
     text-decoration: none;
-    color: gray;
 }
 .sidebar{
     width: 345px;
@@ -37,7 +36,7 @@ a{
 
 }
 .sidebar-brand{
-    height: 90px;
+    height: 79px;
     padding: 1rem 0rem 1rem 2rem;
     color: white;
     background-color: #000033;
@@ -51,13 +50,12 @@ a{
 }
 .sidebar-menu li{
 width: 100%;
-margin-bottom: 1.7rem;
-padding-left: 2rem;
+margin-bottom: 1rem;
 }
 .sidebar-menu a{
     display: block;
-    color:#fff;
-    font-size: 1.1rem;
+    color:grey;
+    font-size: 0.9rem;
 
 }
 .sidebar-menu a.active{
@@ -76,7 +74,7 @@ padding-left: 2rem;
 }
 #nav-toggle:checked + .sidebar .sidebar-brand,
 #nav-toggle:checked + .sidebar li {
-    padding-left: 1rem;
+    
     text-align: center;
 }
 #nav-toggle:checked + .sidebar li a{
@@ -94,7 +92,7 @@ padding-left: 2rem;
     left: 70px;
 }
 .main-content{
-    transition: margin-left 300ms;
+    transition: margin-left 200ms;
     margin-left: 345px;
 }
 header{
@@ -147,12 +145,7 @@ header label span{
     display: inline-block;
     color: var(--text-grey);
 }
-main{
-    margin-top: 85px;
-    padding: 2rem 1.5rem;
-    background: #f1f5f9;
-    min-height: calc(100vh - 90px);
-}
+
 
 
 
@@ -245,7 +238,7 @@ main{
     }
 
 }
-/* body {
+body {
     margin: 0;
     font-family: "Nunito", sans-serif;
     font-size: 0.9rem;
@@ -255,7 +248,7 @@ main{
     text-align: left;
     background-color: #000033;
     background-image: url(http://os7.techaffinity.us/district10/public/custom/theme/images/login-page-bg.png);
-} */
+}
 .text-center{
 margin-top: 2em;
 margin-bottom: 4em;

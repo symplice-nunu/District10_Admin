@@ -1,7 +1,7 @@
-@extends('district10.layout')
- 
+@extends('company.layout')
+  
 @section('content')
- 
+  
 <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -79,65 +79,72 @@
        <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h2 class="m-0 text-dark">Manage Chapter Directory</h2>
+                <h2 class="m-0 text-dark">Manage companies - Add</h2>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item">Manage Companies</li>
+                    <li class="breadcrumb-item"><a href="#">Manage Companies</a></li>
+                    <li class="breadcrumb-item">Add</li>
                 </ol>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 margin-tb">
+<main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
             
-            <div class="pull-right">
-                <a class="btn btn-primary btn-create" href="{{ route('district10.create') }}"> Add Chapter Directory</a>
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <form action="{{ route('company.store') }}" method="POST">
+                        <div class="col-md-12">
+                            @csrf
+                            <div class="form-group mb-2">
+                                <label for="">Company Name</label>
+                                <input type="text" name="companyname" placeholder="Company Name" id="name" class="form-control">
+                                @if ($errors->has('companyname'))
+                                <span class="text-danger">{{ $errors->first('companyname') }}</span>
+                                @endif
+                            </div>
+                           
+                            <div class="form-group mb-2">
+                                
+                            <label for="">Company Name</label>
+                               <select name="chapter" id="" class="form-control">
+                                    <option value="">---Select Chapter---</option>
+                                    <option value="Southwest Line">Southwest Line</option>
+                                    <option value="Missouli Valley Line">Missouli Valley Line</option>
+                                    <option value="Southeastern Line">Southeastern Line</option>
+                                    <option value="American Line Builders">American Line Builders</option>
+                                </select>
+                                @if ($errors->has('chapter'))
+                                <span class="text-danger">{{ $errors->first('chapter') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <input type="radio" name="status"  id="status" value="Active">
+                                <strong>Active</strong>&nbsp;&nbsp;&nbsp;
+                                
+                                <input type="radio" name="status"  id="status" value="Inactive">
+                                <strong>Inactive</strong>
+                                @if ($errors->has('status'))
+                                <span class="text-danger">{{ $errors->first('status') }}</span>
+                                @endif
+                            </div>
+
+                            
+
+                           
+                            <div class="d-grid mx-auto">
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-   
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
-   
-    <table class="table table-bordered">
-        <tr>
-            <th>Chapter Name</th>
-            <th>Contact</th>
-            <th>Position</th>
-            <th>State</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($district10 as $district)
-        <tr>
-            <td>{{ $district->chapter }}</td>
-            <td>{{ $district->contact }}</td>
-            <td>{{ $district->position }}</td>
-            <td>{{ $district->state }}</td>
-            <td>{{ $district->phone }}</td>
-            <td>{{ $district->emailaddress }}</td>
-            <td>
-                <form action="{{ route('district10.destroy',$district->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('district10.show',$district->id) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('district10.edit',$district->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-  
-    {!! $district10->links() !!}
-      
+</main>
 @endsection

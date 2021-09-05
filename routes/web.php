@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\District10Controller;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('district10', 'App\Http\Controllers\District10Controller');
+Route::resource('company', 'App\Http\Controllers\CompanyController');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
-
 
 Route::get('/register', function(){
   return view('auth.signup');

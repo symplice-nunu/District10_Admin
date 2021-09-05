@@ -254,9 +254,8 @@ margin-bottom: 4em;
     margin-bottom: 1em;
     border-radius: 2em;
 }
-.form-control{
-margin-bottom: 1.5em;
-margin-top: 0.5em;
+.mt-5{
+    margin-left: -21em;
 }
 </style>
 </head>
