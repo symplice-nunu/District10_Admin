@@ -67,9 +67,10 @@
 
             </h2>
             <div class="user-wrapper" >
-            <span>Welcome Admin</span>
+            <span>Welcome Admin</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="fas fa-bell"> </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{{ route('logout') }}" style="color: white;">
-            <span class="lab la-google-wallet"> </span></a>
+            <span class="fas fa-power-off"> </span></a>
             
             
             </div>

@@ -146,7 +146,7 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="fas fa-trash" style="height: 2em; width: 2em; border-radius: 2em; background-color: red; border-color: red; color: white;"></button>
+                    <button type="submit" class="fas fa-trash" style="height: 2em; width: 2em; border-radius: 0.5em; background-color: red; border-color: red; color: white;"></button>
                 </form>
             </td>
         </tr>
@@ -154,8 +154,8 @@
     </table>
     
     </div>
-    {!! $company->links() !!}
-       </div>    </div> <p style="color: black;">Dashboard</p>
+    <!-- {!! $company->links() !!} -->
+       </div>    </div>
        
        <script>
 function myFunction() {

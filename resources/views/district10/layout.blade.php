@@ -7,6 +7,8 @@
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <script src="https://kit.fontawesome.com/19faefb6e6.js" crossorigin="anonymous"></script>
 <style>
 @import url('https://fonts.googleapis.com/css/css2?family=Poppins:wght@300;400;500;600&display=swap');
 :root {

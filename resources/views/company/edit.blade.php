@@ -101,6 +101,7 @@
                           <form action="{{ route('company.update',$company->id) }}" method="POST">
                           <div class="col-md-12">
                               @csrf
+                              @method('PUT')
                               <div class="form-group mb-2">
                                   <label for="">Company Name</label>
                                   <input type="text" name="companyname" value="{{ $company->companyname }}" placeholder="Company Name" id="name" class="form-control">
