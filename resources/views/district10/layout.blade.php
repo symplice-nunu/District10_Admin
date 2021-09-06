@@ -24,6 +24,10 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
+.tb-cl{
+    background-color: #003399;
+    color: #fff;
+}
 a{
     text-decoration: none;
 }

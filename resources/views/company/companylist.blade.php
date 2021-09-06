@@ -122,7 +122,7 @@
     @endif
    <div class="container">
     <table class="table table-bordered"  id="myTable">
-        <tr>
+        <tr class="tb-cl">
             <th>Company Name</th>
             <th width="230px">Chapter</th>
             <th width="150px">Status</th>

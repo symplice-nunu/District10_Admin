@@ -10,47 +10,47 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Users</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-hiking"></span>
                         <span>Manage Events</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#"class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Documents</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Document Type</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage JATC Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-user-circle"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list  "></span>
                         <span>Manage Chapter Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage IBEW Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Resources</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Announcement</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Companies</span></a>
                 </li>
             </ul>
@@ -67,9 +67,10 @@
 
             </h2>
             <div class="user-wrapper" >
-            <span>Welcome Admin</span>
+            <span>Welcome Admin</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="fas fa-bell"> </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{{ route('logout') }}" style="color: white;">
-            <span class="lab la-google-wallet"> </span></a>
+            <span class="fas fa-power-off"> </span></a>
             
             
             </div>

@@ -41,6 +41,17 @@ class District10Controller extends Controller
         $request->validate([
             'companyname' => 'required',
             'emailaddress' => 'required',
+            'chapter' => 'required',
+            'position' => 'required',
+            'address' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'zipcode' => 'required',
+            'contact' => 'required',
+            'phone' => 'required',
+            'fax' => 'required',
+            'website' => 'required',
+            'image' => 'required',
         ]);
     
         District10::create($request->all());
@@ -84,7 +95,7 @@ class District10Controller extends Controller
             'companyname' => 'required',
         ]);
     
-        $product->update($request->all());
+        $district10->update($request->all());
     
         return redirect()->route('district10.index')
                         ->with('success','Chapter updated successfully');
@@ -100,7 +111,7 @@ class District10Controller extends Controller
     {
         $district10->delete();
     
-        return redirect()->route('district.index')
+        return redirect()->route('district10.index')
                         ->with('success','Chapter deleted successfully');
     
     }
