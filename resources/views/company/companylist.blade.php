@@ -1,3 +1,4 @@
+
 @extends('company.layout')
 @section('content')
 
@@ -10,47 +11,47 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Users</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-hiking"></span>
                         <span>Manage Events</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#"class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Documents</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Document Type</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage JATC Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-user-circle"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list  "></span>
                         <span>Manage Chapter Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage IBEW Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Resources</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Announcement</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Companies</span></a>
                 </li>
             </ul>
@@ -67,9 +68,10 @@
 
             </h2>
             <div class="user-wrapper" >
-            <span>Welcome Admin</span>
+            <span>Welcome Admin</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="fas fa-bell"> </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{{ route('logout') }}" style="color: white;">
-            <span class="lab la-google-wallet"> </span></a>
+            <span class="fas fa-power-off"> </span></a>
             
             
             </div>
@@ -81,7 +83,7 @@
             <div class="col-sm-6">
                 <h2 class="m-0 text-dark">Manage companies</h2>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 pull-right" >
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item">Manage Companies</li>
@@ -95,6 +97,22 @@
                 <a class="btn btn-primary btn-create" href="{{ route('company.create') }}"> Add Company</a>
             </div>
         </div>
+        <div class="col-lg-2 mn-tps">
+                <strong>Chapter Filter: </strong>
+        </div>
+        <div class="col-lg-3 mn-tps">
+            
+        <select name="chapter" id="fruitOptions" class="form-control">
+                    <option value=''>---All---</option>
+                </select>
+        </div>
+        <div class="col-lg-2 mn-tps">
+                <strong>Search: </strong>
+        </div>
+        <br>
+        <div class="col-lg-3 mn-tps">
+                 <input type="search" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search" class="form-control">
+        </div>
     </div>
    
     @if ($message = Session::get('success'))
@@ -102,8 +120,8 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
-    <table class="table table-bordered">
+   <div class="container">
+    <table class="table table-bordered"  id="myTable">
         <tr>
             <th>Company Name</th>
             <th width="230px">Chapter</th>
@@ -119,21 +137,79 @@
                 <form action="{{ route('company.destroy',$compan->id) }}" method="POST">
    
                     <!-- <a class="btn btn-info" href="{{ route('company.show',$compan->id) }}">Show</a> -->
+                    <button style="height: 2em; width: 2em; border-radius: 2em; background-color: blue; border-color: blue;">
+                        <a class="fas fa-pen" style="color: white;" href="{{ route('company.edit',$compan->id) }}" ></a>
+                    </button>
     
-                    <a class="btn btn-primary" href="{{ route('company.edit',$compan->id) }}">Edit</a>
+                    
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="fas fa-trash" style="height: 2em; width: 2em; border-radius: 2em; background-color: red; border-color: red; color: white;"></button>
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
-  
+    
+    </div>
     {!! $company->links() !!}
        </div>    </div> <p style="color: black;">Dashboard</p>
        
+       <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function myFunction(searchTerm) {
+  var input, filter, table, tr, td, i;
+  filter = searchTerm.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+var options = $("#fruitOptions");
+$("#myTable tr:not(.header)").each(function() {
+  options.append($("<option />").val($(this).find("td:first-child").text()).text($(this).find("td:first-child").text()));
+});
+
+$("#myInput").on('input', function() {
+  myFunction($(this).val());
+});
+
+$("#fruitOptions").on('change', function() {
+  myFunction($(this).val());
+});
+</script>
 @yield('content')
 @endsection
+

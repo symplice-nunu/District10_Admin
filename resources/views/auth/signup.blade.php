@@ -1,7 +1,7 @@
 @extends('app')
-
+<link rel="stylesheet" href="/css/auth.css">
 @section('content')
-
+<body class="bg-ls">
 <main class="cotainer mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -89,7 +89,7 @@
             </div>
         </div>
 </main>
-
+</div>
 
 
 

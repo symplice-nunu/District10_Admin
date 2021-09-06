@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="/css/auth.css">
 @extends('app')
 
 @section('content')
+<body class="bg-ls">
 <section class="login-page">
     <div class="container height-full-page">
         <div class="row align-items-center height-full-page">
@@ -78,6 +80,6 @@
             </div>
         </div>
 </section>
-
+</body>
 
 @endsection

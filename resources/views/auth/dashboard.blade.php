@@ -1,5 +1,6 @@
 @extends('app')
 
+<link rel="stylesheet" href="/css/style.css">
 @section('content')
 
     
@@ -11,47 +12,47 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Users</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-hiking"></span>
                         <span>Manage Events</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#"class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Documents</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Document Type</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-shopping-bag"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-users"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage JATC Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-user-circle"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list  "></span>
                         <span>Manage Chapter Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage IBEW Directory</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Contractor Resources</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-clipboard-list"></span>
                         <span>Manage Announcement</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="las la-clipboard-list"></span>
+                    <a href="#" class="dec"><span class="las la-users"></span>
                         <span>Manage Companies</span></a>
                 </li>
             </ul>
@@ -75,10 +76,10 @@
             
             </div>
         </header>
-       
         <div class="">
       <img class="img-responsive" id="home-map" src="http://os7.techaffinity.us/district10/public/map/usa-map.png" title="Image Map">
     </div>
     </div> <p style="color: black;">Dashboard</p>
+</body>
 @yield('content')
 @endsection
